@@ -11,10 +11,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
   },
-  {
-    path: 'product-details/:id',
-    loadChildren: () => import('./pages/product-details/product-details.module').then(m => m.ProductDetailsModule)
-  },
+  
   {
     path: 'cart',
     loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartModule)
@@ -26,7 +23,21 @@ const routes: Routes = [
   {
     path: 'summary',
     loadChildren: () => import('./pages/summary/summary.module').then(m => m.SummaryModule)
-  }
+  },
+  {
+    path: 'product-details',
+    loadChildren: () => import('./pages/product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+  },
+  
+  {
+    path: 'product-details/:id',
+    loadChildren: () =>
+      import('./pages/product-details/product-details.module').then(
+        (m) => m.ProductDetailsPageModule
+      ),
+  },
+
+
 ];
 
 @NgModule({

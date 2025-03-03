@@ -19,7 +19,7 @@
       <h2>{{ product.price | currency:'USD' }}</h2>
     </ion-card-content>
   </ion-card>
-  <ion-button expand="block" color="primary">
+  <ion-button expand="block" color="primary" (click)="addToCart()">
     Añadir al Carrito
   </ion-button>
 </ion-content>

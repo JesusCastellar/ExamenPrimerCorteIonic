@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { CartService } from './services/cart.service';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,15 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     CommonModule,
     IonicModule
   ],
+  providers: [
+    CartService 
+  ],
   exports: [
     ProductCardComponent,
-    CartItemComponent
+    CartItemComponent,
+    CommonModule,
+    IonicModule
   ]
 })
 export class SharedModule {}
+

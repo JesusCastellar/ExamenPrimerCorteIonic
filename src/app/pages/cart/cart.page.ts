@@ -5,7 +5,7 @@ import { CartService } from '../../shared/services/cart.service';
   selector: 'app-cart',
   templateUrl: './cart.page.html',
   styleUrls: ['./cart.page.scss'],
-  standalone:false
+  standalone: false
 })
 export class CartPage {
   cartItems: any[] = [];
@@ -14,5 +14,6 @@ export class CartPage {
 
   ionViewWillEnter() {
     this.cartItems = this.cartService.getCart();
+    console.log('Carrito actualizado:', this.cartItems);
   }
 }

@@ -32,6 +32,7 @@ export class CartService {
   }
 
   getCart() {
-    return this.cart;
+    const storedCart = localStorage.getItem('cart');
+  return storedCart ? JSON.parse(storedCart) : [];
   }
 }

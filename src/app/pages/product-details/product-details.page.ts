@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FakeStoreService, Product } from 'src/app/shared/services/fake-store.service';
-//import { CartService } from 'src/app/shared/services/cart.service';
 import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class ProductDetailsPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private fakeStoreService: FakeStoreService,
-    private cartService: CartService // Inyectamos el servicio del carrito
+    private cartService: CartService
   ) {}
 
   ngOnInit() {

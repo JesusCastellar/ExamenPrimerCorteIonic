@@ -9,16 +9,13 @@ export class CartService {
   constructor() {
     this.loadCart();
   }
-  
   private loadCart() {
     const storedCart = localStorage.getItem('cart');
     this.cart = storedCart ? JSON.parse(storedCart) : [];
   }
-  
   private saveCart() {
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
-
   addToCart(product: any) {
     const exists = this.cart.find(item => item.id === product.id);
     
@@ -30,9 +27,19 @@ export class CartService {
       console.log('⚠️ El producto ya está en el carrito:', product);
     }
   }
-
   getCart() {
-    const storedCart = localStorage.getItem('cart');
-  return storedCart ? JSON.parse(storedCart) : [];
+    return this.cart;
+  }
+  removeFromCart(index: number) {
+    if (index >= 0 && index < this.cart.length) {
+      console.log('🗑️ Producto eliminado:', this.cart[index]);
+      this.cart.splice(index, 1);
+      this.saveCart();
+    }
+  }
+  clearCart() {
+    this.cart = [];
+    this.saveCart();
+    console.log('🛒 Carrito vaciado');
   }
 }
